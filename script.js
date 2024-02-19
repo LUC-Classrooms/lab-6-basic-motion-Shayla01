@@ -13,18 +13,24 @@ var bodyColor = 200;
 var portholeColor = 0;
 
 function setup() {
-  createCanvas(320, 240);
+  createCanvas(600, 400);
 }
 
 function draw() {
   // background is drawn first
   background(0, 0, 50); // deep blue
-  
   ufo(x, y, d, r); // call the ufo() function (see below)
   
   // add code here to change the ship location each frame
-  
-  
+  x += 2; // add two to the value of each frame 
+  r += -.02; // add -.02 to the value of r 
+  y -= .5;
+
+  if (x > width){
+    x = 0; 
+  }
+  if(y < 0)
+  y = height;
 }
 
 function ufo(tempX, tempY, tempD, tempR){
